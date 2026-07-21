@@ -11,9 +11,13 @@ class Worker extends Model
         'user_id',
         'worker_type_id',
         'experience',
+        'description',
+        'hourly_rate',
         'latitude',
         'longitude',
-        'is_available'
+        'is_available',
+        'is_verified',
+        'profile_image',
     ];
 
 
