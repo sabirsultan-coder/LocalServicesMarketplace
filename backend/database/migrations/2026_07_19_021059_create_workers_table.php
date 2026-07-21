@@ -22,13 +22,23 @@ return new class extends Migration
                   ->constrained()
                   ->cascadeOnDelete();
 
+            // Professional Information
             $table->unsignedTinyInteger('experience')->default(0);
+            $table->text('description')->nullable();
 
-            $table->decimal('latitude', 10, 7);
+            // Future Feature (pricing)
+            $table->decimal('hourly_rate', 8, 2)->nullable();
 
-            $table->decimal('longitude', 10, 7);
+            // GPS Location
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
 
+            // Status
             $table->boolean('is_available')->default(true);
+            $table->boolean('is_verified')->default(false);
+
+            // Profile Photo
+            $table->string('profile_image')->nullable();
 
             $table->timestamps();
         });
