@@ -5,8 +5,9 @@ use App\Http\Controllers\Api\WorkerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\WorkerListingController;
 
-
+Route::get('/workers', [WorkerListingController::class, 'index']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/categories', [CategoryController::class, 'index']);
